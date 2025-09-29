@@ -8,51 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 30% 98%;
-    --foreground: 220 10% 15%;
+    --background: 249 250 251;
+    --foreground: 17 24 39;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 10% 15%;
+    --card: 255 255 255;
+    --card-foreground: 17 24 39;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 15%;
+    --popover: 255 255 255;
+    --popover-foreground: 17 24 39;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 59 130 246;
+    --primary-foreground: 255 255 255;
 
-    --secondary: 220 30% 95%;
-    --secondary-foreground: 220 10% 15%;
+    --secondary: 241 245 249;
+    --secondary-foreground: 17 24 39;
 
-    --muted: 220 30% 95%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 34 211 238;
+    --accent-foreground: 15 23 42;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
 
-    --border: 220 30% 90%;
-    --input: 220 30% 90%;
-    --ring: 217 91% 60%;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 59 130 246;
 
     --radius: 0.75rem;
     
-    /* Data Science Color Palette */
-    --data-primary: 217 91% 60%;
-    --data-secondary: 142 76% 36%;
-    --data-accent: 262 83% 58%;
-    --data-warning: 45 93% 47%;
-    --data-success: 142 76% 36%;
-    --data-gradient: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
-    --data-gradient-soft: linear-gradient(180deg, hsl(220 30% 98%), hsl(217 91% 95%));
+    /* Lovable Modern Color Palette - Vibrant & Professional */
+    --lovable-primary: 127 0 255;      /* Purple */
+    --lovable-secondary: 225 0 255;    /* Magenta */
+    --lovable-accent: 255 140 0;       /* Warm Orange */
+    --lovable-success: 34 197 94;      /* Green */
+    --lovable-warning: 251 191 36;     /* Yellow */
+    --lovable-background-light: 240 244 255; /* Soft Blue */
     
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(217 91% 60% / 0.2);
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.15);
+    /* Enhanced Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--lovable-primary)), hsl(var(--lovable-secondary)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--lovable-secondary)), hsl(var(--lovable-accent)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--lovable-background-light)), hsl(255 255 255));
+    --gradient-glow: radial-gradient(circle, hsl(var(--lovable-primary) / 0.1), transparent);
     
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Enhanced Shadows */
+    --shadow-elegant: 0 20px 50px -10px hsl(var(--lovable-primary) / 0.25);
+    --shadow-glow: 0 0 60px hsl(var(--lovable-primary) / 0.3);
+    --shadow-accent: 0 10px 40px -5px hsl(var(--lovable-accent) / 0.4);
+    --shadow-card: 0 4px 20px -2px hsl(var(--lovable-primary) / 0.1);
+    
+    /* Animations & Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fast: all 0.2s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -72,39 +81,50 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 30% 8%;
-    --foreground: 220 30% 95%;
+    --background: 15 23 42;
+    --foreground: 248 250 252;
 
-    --card: 220 30% 10%;
-    --card-foreground: 220 30% 95%;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
 
-    --popover: 220 30% 10%;
-    --popover-foreground: 220 30% 95%;
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 59 130 246;
+    --primary-foreground: 255 255 255;
 
-    --secondary: 220 30% 15%;
-    --secondary-foreground: 220 30% 95%;
+    --secondary: 51 65 85;
+    --secondary-foreground: 248 250 252;
 
-    --muted: 220 30% 15%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 34 211 238;
+    --accent-foreground: 15 23 42;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 220 38 38;
+    --destructive-foreground: 248 250 252;
 
-    --border: 220 30% 20%;
-    --input: 220 30% 20%;
-    --ring: 217 91% 60%;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 59 130 246;
     
-    /* Dark mode data colors */
-    --data-gradient: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
-    --data-gradient-soft: linear-gradient(180deg, hsl(220 30% 8%), hsl(217 91% 15%));
-    --shadow-elegant: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.25);
+    /* Dark Mode Lovable Colors */
+    --lovable-background-dark: 15 23 42;   /* Dark Blue */
+    --lovable-primary-glow: 127 0 255;     /* Purple with glow */
+    --lovable-accent-cyan: 34 211 238;     /* Cyan */
+    
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--lovable-primary-glow)), hsl(var(--lovable-accent-cyan)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--lovable-secondary)), hsl(var(--lovable-accent)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--lovable-background-dark)), hsl(30 41 59));
+    --gradient-glow: radial-gradient(circle, hsl(var(--lovable-primary-glow) / 0.15), transparent);
+    
+    /* Enhanced Dark Shadows */
+    --shadow-elegant: 0 25px 60px -10px hsl(var(--lovable-primary-glow) / 0.4);
+    --shadow-glow: 0 0 80px hsl(var(--lovable-primary-glow) / 0.5);
+    --shadow-accent: 0 15px 50px -5px hsl(var(--lovable-accent-cyan) / 0.3);
+    --shadow-card: 0 8px 30px -4px hsl(var(--lovable-primary-glow) / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -123,5 +143,119 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--lovable-primary) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--lovable-primary) / 0.5);
+  }
+}
+
+@layer components {
+  /* Lovable UI Classes */
+  .lovable-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .lovable-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .lovable-card {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .lovable-pulse {
+    animation: lovable-pulse 2s infinite;
+  }
+  
+  .lovable-float {
+    animation: lovable-float 6s ease-in-out infinite;
+  }
+  
+  .lovable-spin-slow {
+    animation: lovable-spin 20s linear infinite;
+  }
+
+  /* Interactive hover effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+}
+
+@layer utilities {
+  /* Keyframes for custom animations */
+  @keyframes lovable-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--lovable-primary) / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px hsl(var(--lovable-primary) / 0);
+    }
+  }
+  
+  @keyframes lovable-float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes lovable-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes lovable-bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
   }
 }

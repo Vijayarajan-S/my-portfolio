@@ -4,20 +4,20 @@ import { Card } from '@/components/ui/card';
 
 export default function SkillsSection() {
   const skills = [
-    { name: "Python", level: 85, category: "Programming", color: "from-blue-500 to-blue-600" },
-    { name: "SQL", level: 80, category: "Database", color: "from-green-500 to-green-600" },
-    { name: "Pandas", level: 90, category: "Data Analysis", color: "from-purple-500 to-purple-600" },
-    { name: "NumPy", level: 85, category: "Data Analysis", color: "from-indigo-500 to-indigo-600" },
-    { name: "Matplotlib", level: 80, category: "Visualization", color: "from-orange-500 to-orange-600" },
-    { name: "Seaborn", level: 85, category: "Visualization", color: "from-pink-500 to-pink-600" },
-    { name: "Scikit-learn", level: 75, category: "Machine Learning", color: "from-teal-500 to-teal-600" },
-    { name: "Jupyter", level: 90, category: "Tools", color: "from-yellow-500 to-yellow-600" },
+    { name: "Python", level: 85, category: "Programming", color: "#3B82F6", icon: "🐍" },
+    { name: "SQL", level: 80, category: "Database", color: "#10B981", icon: "🗄️" },
+    { name: "Pandas", level: 90, category: "Data Analysis", color: "#8B5CF6", icon: "🐼" },
+    { name: "NumPy", level: 85, category: "Data Analysis", color: "#6366F1", icon: "🔢" },
+    { name: "Matplotlib", level: 80, category: "Visualization", color: "#F59E0B", icon: "📊" },
+    { name: "Seaborn", level: 85, category: "Visualization", color: "#EC4899", icon: "📈" },
+    { name: "Scikit-learn", level: 75, category: "Machine Learning", color: "#06B6D4", icon: "🤖" },
+    { name: "Jupyter", level: 90, category: "Tools", color: "#EF4444", icon: "📓" },
   ];
 
   const categories = ["Programming", "Database", "Data Analysis", "Visualization", "Machine Learning", "Tools"];
 
   return (
-    <section id="skills" className="py-20 px-4 bg-secondary/30">
+    <section id="skills" className="py-20 px-4 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-slate-900 dark:via-purple-900/20 dark:to-blue-900/20">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -26,55 +26,122 @@ export default function SkillsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
             Technical Skills
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8" />
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-8 lovable-pulse" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Proficient in modern data science tools and technologies
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50, rotateY: -15 }}
+              whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 100 
+              }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -10,
+                rotateY: 5,
+                transition: { type: "spring", stiffness: 400 }
+              }}
+              className="group"
             >
-              <Card className="p-6 h-full hover:shadow-elegant transition-all duration-300 bg-card/80 backdrop-blur-sm">
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="font-semibold text-foreground">{skill.name}</h3>
-                  <span className="text-sm text-muted-foreground">{skill.category}</span>
-                </div>
+              <Card className="p-6 h-full lovable-card hover-lift hover-glow transition-all duration-500 relative overflow-hidden">
+                {/* Animated background gradient */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${skill.color}20, ${skill.color}05)` 
+                  }}
+                />
                 
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground">Proficiency</span>
-                    <span className="font-medium text-primary">{skill.level}%</span>
+                <div className="relative z-10">
+                  {/* Skill icon with float animation */}
+                  <motion.div 
+                    className="text-4xl mb-4 lovable-float"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    {skill.icon}
+                  </motion.div>
+                  
+                  <div className="flex justify-between items-center mb-3">
+                    <h3 className="font-bold text-foreground group-hover:text-purple-600 transition-colors duration-300">
+                      {skill.name}
+                    </h3>
+                    <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded-full">
+                      {skill.category}
+                    </span>
                   </div>
                   
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
-                    viewport={{ once: true }}
-                  >
-                    <Progress 
-                      value={skill.level} 
-                      className="h-2 bg-secondary"
-                    />
-                  </motion.div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Proficiency</span>
+                      <motion.span 
+                        className="font-bold text-purple-600"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 + 0.8 }}
+                        viewport={{ once: true }}
+                      >
+                        {skill.level}%
+                      </motion.span>
+                    </div>
+                    
+                    {/* Circular progress indicator */}
+                    <div className="relative">
+                      <div className="w-full bg-secondary/50 rounded-full h-3 overflow-hidden">
+                        <motion.div
+                          className="h-full rounded-full"
+                          style={{ 
+                            background: `linear-gradient(90deg, ${skill.color}, ${skill.color}AA)` 
+                          }}
+                          initial={{ width: 0, x: -100 }}
+                          whileInView={{ width: `${skill.level}%`, x: 0 }}
+                          transition={{ 
+                            duration: 1.5, 
+                            delay: index * 0.1 + 0.5,
+                            ease: "easeOut"
+                          }}
+                          viewport={{ once: true }}
+                        />
+                      </div>
+                      
+                      {/* Glowing dot at end of progress bar */}
+                      <motion.div
+                        className="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full shadow-lg"
+                        style={{ 
+                          background: skill.color,
+                          boxShadow: `0 0 10px ${skill.color}50`
+                        }}
+                        initial={{ left: "0%" }}
+                        whileInView={{ left: `${skill.level}%` }}
+                        transition={{ 
+                          duration: 1.5, 
+                          delay: index * 0.1 + 0.5,
+                          ease: "easeOut"
+                        }}
+                        viewport={{ once: true }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </Card>
             </motion.div>
           ))}
         </div>
 
-        {/* Interactive Skill Categories */}
+        {/* Interactive Skill Categories with enhanced animations */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,14 +154,23 @@ export default function SkillsSection() {
             {categories.map((category, index) => (
               <motion.div
                 key={category}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: index * 0.1,
+                  type: "spring",
+                  stiffness: 200
+                }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.1 }}
-                className="px-6 py-3 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full border border-primary/20 hover:border-primary/40 transition-all duration-300 cursor-pointer"
+                whileHover={{ 
+                  scale: 1.1, 
+                  y: -5,
+                  boxShadow: "0 10px 30px rgba(147, 51, 234, 0.3)"
+                }}
+                className="px-6 py-3 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-full border-2 border-purple-200 dark:border-purple-700 hover:border-purple-400 transition-all duration-300 cursor-pointer lovable-card"
               >
-                <span className="text-primary font-medium">{category}</span>
+                <span className="text-purple-600 dark:text-purple-400 font-medium">{category}</span>
               </motion.div>
             ))}
           </div>

@@ -28,19 +28,19 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent"
+            initial={{ opacity: 0, scale: 0.8, rotateX: -15 }}
+            animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+            transition={{ duration: 1.2, delay: 0.2, type: "spring", stiffness: 100 }}
           >
             Hi, I'm Alex Chen
           </motion.h1>
           
           <motion.p
             className="text-xl md:text-2xl text-muted-foreground mb-8 font-light"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6, type: "spring" }}
           >
             Aspiring Data Scientist
           </motion.p>
@@ -49,31 +49,32 @@ export default function HeroSection() {
             className="text-lg md:text-xl text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
           >
             Passionate about transforming data into actionable insights through 
-            <span className="text-primary font-semibold"> machine learning</span>, 
-            <span className="text-accent font-semibold"> analytics</span>, and 
-            <span className="text-primary font-semibold"> visualization</span>
+            <span className="text-purple-600 font-semibold"> machine learning</span>, 
+            <span className="text-pink-600 font-semibold"> analytics</span>, and 
+            <span className="text-blue-600 font-semibold"> visualization</span>
           </motion.p>
           
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
           >
             <Button 
+              variant="glow"
               size="lg" 
-              className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 shadow-elegant"
+              className="text-lg px-8 py-6 lovable-pulse"
               onClick={() => scrollToSection('projects')}
             >
               View Projects
             </Button>
             <Button 
+              variant="outline"
               size="lg" 
-              variant="outline" 
-              className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-white"
+              className="text-lg px-8 py-6"
               onClick={() => scrollToSection('contact')}
             >
               Contact Me
@@ -87,13 +88,13 @@ export default function HeroSection() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.2 }}
+        transition={{ duration: 1, delay: 1.4 }}
       >
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+        <div className="w-6 h-10 border-2 border-purple-600 rounded-full flex justify-center lovable-pulse">
           <motion.div
-            className="w-1 h-3 bg-primary rounded-full mt-2"
+            className="w-1 h-3 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full mt-2"
             animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
       </motion.div>

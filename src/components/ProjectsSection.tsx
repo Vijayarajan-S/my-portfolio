@@ -13,7 +13,9 @@ export default function ProjectsSection() {
       impact: "94% Accuracy",
       category: "Machine Learning",
       github: "#",
-      demo: "#"
+      demo: "#",
+      color: "#8B5CF6",
+      icon: "🤖"
     },
     {
       title: "Sales Analytics Dashboard",
@@ -22,7 +24,9 @@ export default function ProjectsSection() {
       impact: "Real-time Insights",
       category: "Data Visualization",
       github: "#",
-      demo: "#"
+      demo: "#",
+      color: "#3B82F6",
+      icon: "📊"
     },
     {
       title: "Stock Price Forecasting",
@@ -31,7 +35,9 @@ export default function ProjectsSection() {
       impact: "85% Prediction Accuracy",
       category: "Deep Learning",
       github: "#",
-      demo: "#"
+      demo: "#",
+      color: "#10B981",
+      icon: "📈"
     },
     {
       title: "Social Media Sentiment Analysis",
@@ -40,7 +46,9 @@ export default function ProjectsSection() {
       impact: "90% Sentiment Accuracy",
       category: "Natural Language Processing",
       github: "#",
-      demo: "#"
+      demo: "#",
+      color: "#F59E0B",
+      icon: "💬"
     },
     {
       title: "E-commerce Recommendation System",
@@ -49,12 +57,14 @@ export default function ProjectsSection() {
       impact: "30% Increase in CTR",
       category: "Recommendation Systems",
       github: "#",
-      demo: "#"
+      demo: "#",
+      color: "#EC4899",
+      icon: "🛒"
     }
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 bg-secondary/20">
+    <section id="projects" className="py-20 px-4 bg-gradient-to-br from-gray-50 via-purple-50/50 to-blue-50 dark:from-gray-900 dark:via-purple-900/10 dark:to-blue-900/10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -63,10 +73,10 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8" />
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-8 lovable-pulse" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Showcasing data science projects with measurable impact and real-world applications
           </p>
@@ -76,74 +86,177 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50, rotateY: -15 }}
+              whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 100
+              }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="group"
+              whileHover={{ 
+                scale: 1.03, 
+                y: -15,
+                rotateY: 5,
+                transition: { type: "spring", stiffness: 300 }
+              }}
+              className="group perspective-1000"
             >
-              <Card className="p-6 h-full hover:shadow-elegant transition-all duration-300 bg-card/80 backdrop-blur-sm relative overflow-hidden">
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <Card className="p-6 h-full lovable-card hover-lift hover-glow transition-all duration-500 relative overflow-hidden transform-gpu">
+                {/* Animated background gradient */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-all duration-500 bg-gradient-to-br"
+                  style={{ 
+                    background: `linear-gradient(135deg, ${project.color}20, ${project.color}05)` 
+                  }}
+                />
+                
+                {/* Floating particles effect */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  {[...Array(6)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-2 h-2 rounded-full opacity-0 group-hover:opacity-30"
+                      style={{ background: project.color }}
+                      initial={{ 
+                        x: Math.random() * 100 + "%", 
+                        y: "100%",
+                        scale: 0 
+                      }}
+                      whileHover={{
+                        y: -20,
+                        scale: 1,
+                        transition: {
+                          duration: 2,
+                          delay: i * 0.2,
+                          repeat: Infinity,
+                          repeatType: "reverse"
+                        }
+                      }}
+                    />
+                  ))}
+                </div>
                 
                 <div className="relative z-10">
-                  {/* Header */}
+                  {/* Header with icon */}
                   <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <Badge variant="secondary" className="mb-2 text-xs">
-                        {project.category}
-                      </Badge>
-                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-                        {project.title}
-                      </h3>
+                    <div className="flex items-center gap-3">
+                      <motion.div 
+                        className="text-4xl"
+                        whileHover={{ scale: 1.2, rotate: 10 }}
+                        transition={{ type: "spring", stiffness: 400 }}
+                      >
+                        {project.icon}
+                      </motion.div>
+                      <div>
+                        <Badge 
+                          variant="secondary" 
+                          className="mb-2 text-xs"
+                          style={{ backgroundColor: `${project.color}20`, color: project.color }}
+                        >
+                          {project.category}
+                        </Badge>
+                        <h3 className="text-xl font-bold text-foreground group-hover:text-purple-600 transition-colors duration-300">
+                          {project.title}
+                        </h3>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <p className="text-sm font-semibold text-primary">{project.impact}</p>
-                    </div>
+                    <motion.div 
+                      className="text-right"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      <p 
+                        className="text-sm font-bold px-3 py-1 rounded-full"
+                        style={{ 
+                          backgroundColor: `${project.color}20`, 
+                          color: project.color,
+                          border: `1px solid ${project.color}40`
+                        }}
+                      >
+                        {project.impact}
+                      </p>
+                    </motion.div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-foreground/80 mb-4 leading-relaxed">
+                  <p className="text-foreground/80 mb-4 leading-relaxed group-hover:text-foreground transition-colors duration-300">
                     {project.description}
                   </p>
 
-                  {/* Technologies */}
+                  {/* Technologies with staggered animation */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, i) => (
-                      <Badge key={i} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ 
+                          duration: 0.3, 
+                          delay: index * 0.1 + i * 0.05 
+                        }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <Badge 
+                          variant="outline" 
+                          className="text-xs hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors duration-300"
+                        >
+                          {tech}
+                        </Badge>
+                      </motion.div>
                     ))}
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Action Buttons with enhanced animations */}
                   <div className="flex gap-3">
-                    <Button 
-                      size="sm" 
-                      className="flex-1 bg-primary hover:bg-primary/90"
-                      onClick={() => window.open(project.github, '_blank')}
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1"
                     >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      variant="outline"
-                      className="flex-1 border-primary text-primary hover:bg-primary hover:text-white"
-                      onClick={() => window.open(project.demo, '_blank')}
+                      <Button 
+                        size="sm" 
+                        variant="default"
+                        className="w-full group-hover:scale-105 transition-transform duration-300"
+                        onClick={() => window.open(project.github, '_blank')}
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </Button>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1"
                     >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
-                    </Button>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="w-full group-hover:scale-105 transition-transform duration-300 hover:bg-purple-600 hover:text-white hover:border-purple-600"
+                        onClick={() => window.open(project.demo, '_blank')}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Demo
+                      </Button>
+                    </motion.div>
                   </div>
                 </div>
+                
+                {/* Glow effect on hover */}
+                <div 
+                  className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    boxShadow: `0 0 40px ${project.color}30`
+                  }}
+                />
               </Card>
             </motion.div>
           ))}
         </div>
 
-        {/* View More Projects */}
+        {/* View More Projects with enhanced button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -153,8 +266,8 @@ export default function ProjectsSection() {
         >
           <Button 
             size="lg" 
-            variant="outline"
-            className="text-lg px-8 py-6 border-primary text-primary hover:bg-primary hover:text-white"
+            variant="glow"
+            className="text-lg px-8 py-6 lovable-pulse hover:scale-105 transition-all duration-300"
             onClick={() => window.open('#', '_blank')}
           >
             <Github className="w-5 h-5 mr-2" />
