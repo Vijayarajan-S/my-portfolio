@@ -33,7 +33,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, scale: 1, rotateX: 0 }}
             transition={{ duration: 1.2, delay: 0.2, type: "spring", stiffness: 100 }}
           >
-            Hi, I'm Alex Chen
+            Hi, I'm Vijayarajan Selvam
           </motion.h1>
           
           <motion.p
@@ -70,14 +70,6 @@ export default function HeroSection() {
               onClick={() => scrollToSection('projects')}
             >
               View Projects
-            </Button>
-            <Button 
-              variant="outline"
-              size="lg" 
-              className="text-lg px-8 py-6"
-              onClick={() => scrollToSection('contact')}
-            >
-              Contact Me
             </Button>
           </motion.div>
         </motion.div>

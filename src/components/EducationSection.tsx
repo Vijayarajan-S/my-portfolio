@@ -5,29 +5,34 @@ import { Badge } from '@/components/ui/badge';
 export default function EducationSection() {
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of Technology",
-      period: "2020 - 2024",
-      description: "Specialized in Data Science and Machine Learning",
-      achievements: ["Dean's List", "3.8 GPA", "Data Mining Research"],
-      status: "completed"
+      degree: "Higher Secondary",
+      institution: "Tagore Matriculation Higher Secondary School",
+      period: "2019 - 2020",
+      description: "Completed higher secondary education with focus on Biology and Mathematics."
     },
     {
-      degree: "Data Science Bootcamp",
-      institution: "TechEd Academy",
-      period: "2023",
-      description: "intensive 12-week program covering end-to-end data science",
-      achievements: ["Top 10% Graduate", "Capstone Project Award"],
-      status: "completed"
+      degree: "Diploma in Computer Engineering",
+      institution: "Muthayammal Polytechnic College",
+      period: "2020 - 2022",
+      description: "Studied core computer engineering subjects including programming, networking, and hardware fundamentals."
+    },
+    {
+      degree: "Bachelor of Engineering in Computer Science & Engineering",
+      institution: "PSG College of Engineering",
+      period: "2022 - 2025",
+      description: "Specialized in Data Science and Machine Learning, with hands-on experience in Java, Python, SQL, and software development projects."
+
+    },
+    {
+      degree: "Data Science Certification",
+      institution: "GUVI Geek Networks, IITM Research Park",
+      period: "2025",
+      description: "Completed professional data science course covering Python, ML, DL, NLP, SQL, and real-time project work."
     }
   ];
+  
 
-  const certifications = [
-    { name: "Python for Data Science", provider: "Coursera", year: "2023" },
-    { name: "Machine Learning Specialization", provider: "Stanford Online", year: "2023" },
-    { name: "SQL for Data Analysis", provider: "Udacity", year: "2022" },
-    { name: "Data Visualization with Tableau", provider: "Tableau", year: "2023" }
-  ];
+
 
   return (
     <section id="education" className="py-20 px-4">
@@ -40,7 +45,7 @@ export default function EducationSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Education & Certifications
+            Education
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8" />
         </motion.div>
@@ -79,7 +84,7 @@ export default function EducationSection() {
                       <p className="text-foreground/80 mb-4">{edu.description}</p>
                       
                       <div className="flex flex-wrap gap-2">
-                        {edu.achievements.map((achievement, i) => (
+                        {edu.achievements?.map((achievement: string, i: number) => (
                           <Badge key={i} variant="secondary" className="text-xs">
                             {achievement}
                           </Badge>
@@ -93,32 +98,7 @@ export default function EducationSection() {
           </div>
         </div>
 
-        {/* Certifications Grid */}
-        <div>
-          <h3 className="text-2xl font-bold mb-8 text-center text-foreground">Professional Certifications</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
-              >
-                <Card className="p-6 hover:shadow-elegant transition-all duration-300 bg-card/80 backdrop-blur-sm">
-                  <div className="flex justify-between items-start mb-3">
-                    <h4 className="font-semibold text-foreground flex-1">{cert.name}</h4>
-                    <Badge variant="outline" className="ml-2 text-xs">
-                      {cert.year}
-                    </Badge>
-                  </div>
-                  <p className="text-primary font-medium">{cert.provider}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        {/* Certifications Removed */}
       </div>
     </section>
   );

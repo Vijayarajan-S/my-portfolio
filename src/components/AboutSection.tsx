@@ -2,12 +2,15 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 
 export default function AboutSection() {
-  const interests = [
+  const skillsOverview = [
     { icon: "🐍", title: "Python", description: "Data manipulation & analysis" },
     { icon: "🗄️", title: "SQL", description: "Database querying & optimization" },
     { icon: "🤖", title: "Machine Learning", description: "Predictive modeling & algorithms" },
     { icon: "📊", title: "Data Visualization", description: "Storytelling with data" },
+    { icon: "🧠", title: "Deep Learning", description: "Neural networks & computer vision" },
+    { icon: "📚", title: "AI / NLP", description: "Natural language processing & intelligent systems" }
   ];
+  
 
   return (
     <section id="about" className="py-20 px-4">
@@ -20,7 +23,7 @@ export default function AboutSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            About Me
+            About Vijayarajan Selvam
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8" />
         </motion.div>
@@ -33,17 +36,17 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <div className="space-y-6">
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                I'm a passionate data science enthusiast with a strong foundation in 
-                mathematics and computer science. My journey began with curiosity about 
-                how data can reveal hidden patterns and drive meaningful decisions.
-              </p>
-              
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                Through hands-on projects and continuous learning, I've developed expertise 
-                in data analysis, machine learning, and visualization. I'm excited to apply 
-                these skills to solve real-world problems and create data-driven solutions.
-              </p>
+                   <p className="text-lg text-foreground/80 leading-relaxed">
+                  I'm a passionate and driven aspiring data scientist with a strong foundation in mathematics and computer science. 
+                  I love uncovering patterns in data and turning insights into actionable solutions.
+                  </p>
+
+                <p className="text-lg text-foreground/80 leading-relaxed">
+                  With hands-on experience in data analysis, machine learning, deep learning, NLP, and data visualization,
+                  I enjoy building projects that solve real-world problems. I'm eager to contribute my skills to innovative,
+                    data-driven solutions and continue learning in a fast-paced environment.
+                </p>
+
 
               <div className="flex flex-wrap gap-3 mt-8">
                 {["Curious", "Detail-oriented", "Problem-solver", "Team player"].map((trait, index) => (
@@ -69,7 +72,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-4"
           >
-            {interests.map((interest, index) => (
+            {skillsOverview.map((interest, index) => (
               <motion.div
                 key={interest.title}
                 initial={{ opacity: 0, y: 30 }}

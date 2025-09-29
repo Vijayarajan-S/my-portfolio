@@ -3,7 +3,6 @@ import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import EducationSection from '@/components/EducationSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import ThemeToggle from '@/components/ThemeToggle';
 
@@ -16,7 +15,6 @@ const Index = () => {
       <SkillsSection />
       <EducationSection />
       <ProjectsSection />
-      <ContactSection />
       <Footer />
     </div>
   );

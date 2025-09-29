@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 hover:scale-105 hover:shadow-lg active:scale-95",
+        default: "bg-gradient-to-r from-[hsl(var(--lovable-primary))] to-[hsl(var(--accent))] text-white hover:from-[hsl(var(--lovable-primary))] hover:to-[hsl(var(--accent))] hover:brightness-105 hover:shadow-[0_8px_24px_hsl(var(--lovable-primary)/0.35)] hover:scale-[1.03] active:scale-95",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:scale-105",
-        outline: "border-2 border-purple-600 bg-transparent text-purple-600 hover:bg-purple-600 hover:text-white hover:scale-105 hover:shadow-lg",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:scale-105",
-        ghost: "hover:bg-accent hover:text-accent-foreground hover:scale-105",
-        link: "text-primary underline-offset-4 hover:underline hover:text-purple-700",
-        glow: "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] hover:scale-105",
-        bounce: "bg-primary text-primary-foreground hover:bg-primary/90 hover:animate-bounce",
+        outline: "border-2 border-[hsl(var(--lovable-primary))] bg-transparent text-[hsl(var(--lovable-primary))] hover:bg-[hsl(var(--lovable-primary))] hover:text-white hover:shadow-[0_8px_24px_hsl(var(--lovable-primary)/0.35)] hover:scale-[1.03]",
+        secondary: "bg-[hsl(var(--secondary))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--secondary)/0.9)] hover:scale-[1.03]",
+        ghost: "hover:bg-[hsl(var(--accent)/0.15)] hover:text-[hsl(var(--foreground))] hover:scale-[1.03]",
+        link: "text-[hsl(var(--lovable-primary))] underline-offset-4 hover:underline hover:text-[hsl(var(--accent))]",
+        glow: "bg-[hsl(var(--lovable-primary))] text-white hover:shadow-[0_0_30px_hsl(var(--accent)/0.55)] hover:scale-[1.04]",
+        bounce: "bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary)/0.9)] hover:animate-bounce",
       },
       size: {
         default: "h-10 px-4 py-2",

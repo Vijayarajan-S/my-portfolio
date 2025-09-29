@@ -3,9 +3,9 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:alex.chen@email.com", label: "Email" },
+    { icon: Github, href: "https://github.com/Vijayarajan-S", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/vijayarajan-selvam-62b31225a/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:vijayjaga0007@gmail.com", label: "Email" },
   ];
 
   return (
@@ -26,7 +26,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4"
           >
-            Alex Chen
+            Vijayarajan Selvam
           </motion.h3>
 
           {/* Tagline */}
@@ -73,10 +73,10 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="pt-8 border-t border-border/50"
+            className="pt-8 border-top border-border/50"
           >
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Alex Chen. Built with React & Tailwind CSS
+              © {new Date().getFullYear()} Vijayarajan Selvam
             </p>
             <p className="text-xs text-muted-foreground mt-2">
               Designed to showcase data science skills and passion

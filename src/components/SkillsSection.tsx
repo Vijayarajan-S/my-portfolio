@@ -1,18 +1,51 @@
 import { motion } from 'framer-motion';
-import { Progress } from '@/components/ui/progress';
 import { Card } from '@/components/ui/card';
 
 export default function SkillsSection() {
   const skills = [
-    { name: "Python", level: 85, category: "Programming", color: "#3B82F6", icon: "🐍" },
-    { name: "SQL", level: 80, category: "Database", color: "#10B981", icon: "🗄️" },
-    { name: "Pandas", level: 90, category: "Data Analysis", color: "#8B5CF6", icon: "🐼" },
-    { name: "NumPy", level: 85, category: "Data Analysis", color: "#6366F1", icon: "🔢" },
-    { name: "Matplotlib", level: 80, category: "Visualization", color: "#F59E0B", icon: "📊" },
-    { name: "Seaborn", level: 85, category: "Visualization", color: "#EC4899", icon: "📈" },
-    { name: "Scikit-learn", level: 75, category: "Machine Learning", color: "#06B6D4", icon: "🤖" },
-    { name: "Jupyter", level: 90, category: "Tools", color: "#EF4444", icon: "📓" },
-  ];
+    
+      // Programming
+      { name: "Python", category: "Programming", color: "#3B82F6", icon: "🐍" },
+      { name: "Java", category: "Programming", color: "#F87171", icon: "☕" },
+    
+      // Database
+      { name: "SQL", category: "Database", color: "#10B981", icon: "🗄️" },
+      { name: "MySQL", category: "Database", color: "#00758F", icon: "🗄️" },
+      { name: "PostgreSQL", category: "Database", color: "#336791", icon: "🗄️" },
+    
+      // Data Analysis
+      { name: "Pandas", category: "Data Analysis", color: "#8B5CF6", icon: "🐼" },
+      { name: "NumPy", category: "Data Analysis", color: "#6366F1", icon: "🔢" },
+    
+      // Visualization
+      { name: "Matplotlib", category: "Visualization", color: "#F59E0B", icon: "📊" },
+      { name: "Seaborn", category: "Visualization", color: "#EC4899", icon: "📈" },
+    
+      // Machine Learning & Deep Learning
+      { name: "Scikit-learn", category: "Machine Learning", color: "#06B6D4", icon: "🤖" },
+      { name: "Deep Learning", category: "Machine Learning", color: "#6366F1", icon: "🧠" },
+      { name: "Keras", category: "Deep Learning", color: "#D00000", icon: "🔗" },
+    
+      // AI / NLP
+      { name: "NLP", category: "AI / NLP", color: "#F97316", icon: "🧾" },
+      { name: "NLTK", category: "AI / NLP", color: "#FF6B6B", icon: "📜" },
+      { name: "Text Preprocessing", category: "AI / NLP", color: "#FCD34D", icon: "✂️" },
+      { name: "RAG", category: "AI / NLP", color: "#F97316", icon: "📚" },
+    
+      // Computer Vision
+      { name: "Roboflow", category: "Computer Vision", color: "#0EA5E9", icon: "🤖" },
+      { name: "YOLO", category: "Computer Vision", color: "#FACC15", icon: "🎯" },
+    
+      // Web Development / Backend
+      { name: "Flask", category: "Backend / Web", color: "#000000", icon: "🍶" },
+    
+      // Cloud
+      { name: "AWS", category: "Cloud", color: "#FF9900", icon: "☁️" },
+    
+      // Version Control
+      { name: "Git", category: "Version Control", color: "#F05032", icon: "🌳" },
+    ];
+    
 
   const categories = ["Programming", "Database", "Data Analysis", "Visualization", "Machine Learning", "Tools"];
 
@@ -82,58 +115,6 @@ export default function SkillsSection() {
                     <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded-full">
                       {skill.category}
                     </span>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">Proficiency</span>
-                      <motion.span 
-                        className="font-bold text-purple-600"
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 + 0.8 }}
-                        viewport={{ once: true }}
-                      >
-                        {skill.level}%
-                      </motion.span>
-                    </div>
-                    
-                    {/* Circular progress indicator */}
-                    <div className="relative">
-                      <div className="w-full bg-secondary/50 rounded-full h-3 overflow-hidden">
-                        <motion.div
-                          className="h-full rounded-full"
-                          style={{ 
-                            background: `linear-gradient(90deg, ${skill.color}, ${skill.color}AA)` 
-                          }}
-                          initial={{ width: 0, x: -100 }}
-                          whileInView={{ width: `${skill.level}%`, x: 0 }}
-                          transition={{ 
-                            duration: 1.5, 
-                            delay: index * 0.1 + 0.5,
-                            ease: "easeOut"
-                          }}
-                          viewport={{ once: true }}
-                        />
-                      </div>
-                      
-                      {/* Glowing dot at end of progress bar */}
-                      <motion.div
-                        className="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full shadow-lg"
-                        style={{ 
-                          background: skill.color,
-                          boxShadow: `0 0 10px ${skill.color}50`
-                        }}
-                        initial={{ left: "0%" }}
-                        whileInView={{ left: `${skill.level}%` }}
-                        transition={{ 
-                          duration: 1.5, 
-                          delay: index * 0.1 + 0.5,
-                          ease: "easeOut"
-                        }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
                   </div>
                 </div>
               </Card>
