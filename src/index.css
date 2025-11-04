@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 100% 98%; /* #FFF5F5 */
+    --foreground: 214 45% 23%; /* #1D3557 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 45% 23%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 45% 23%;
+
+    --primary: 355 78% 56%; /* #E63946 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 192 72% 95%; /* #F1FAEE approximated in HSL */
+    --secondary-foreground: 214 45% 23%;
+
+    --muted: 192 72% 95%;
+    --muted-foreground: 214 32% 47%;
+
+    --accent: 43 100% 52%; /* #FFBA08 */
+    --accent-foreground: 214 45% 23%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 36% 90%;
+    --input: 0 36% 90%;
+    --ring: 355 78% 56%;
+
+    --radius: 0.75rem;
+    
+    /* Red-Themed Lovable Palette */
+    --lovable-primary: 355 78% 56%;      /* Bold Red #E63946 */
+    --lovable-secondary: 192 72% 95%;    /* Soft Cream #F1FAEE */
+    --lovable-accent: 43 100% 52%;       /* Warm Yellow #FFBA08 */
+    --lovable-success: 142 71% 45%;      /* Green */
+    --lovable-warning: 43 100% 52%;      /* Yellow */
+    --lovable-background-light: 0 100% 98%; /* Very light pinkish-white */
+    
+    /* Enhanced Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--lovable-primary)), hsl(var(--lovable-accent)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--lovable-primary) / 0.9), hsl(var(--lovable-accent)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--lovable-background-light)), hsl(0 0% 100%));
+    --gradient-glow: radial-gradient(circle, hsl(var(--lovable-primary) / 0.08), transparent);
+    
+    /* Enhanced Shadows */
+    --shadow-elegant: 0 20px 50px -10px hsl(var(--lovable-primary) / 0.2);
+    --shadow-glow: 0 0 60px hsl(var(--lovable-accent) / 0.35);
+    --shadow-accent: 0 10px 40px -5px hsl(var(--lovable-accent) / 0.4);
+    --shadow-card: 0 4px 20px -2px hsl(var(--lovable-primary) / 0.12);
+    
+    /* Animations & Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fast: all 0.2s ease-out;
+
+    --sidebar-background: 0 100% 98%;
+
+    --sidebar-foreground: 214 45% 23%;
+
+    --sidebar-primary: 355 78% 56%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 192 72% 95%;
+
+    --sidebar-accent-foreground: 214 45% 23%;
+
+    --sidebar-border: 0 36% 90%;
+
+    --sidebar-ring: 355 78% 56%;
+  }
+
+  .dark {
+    --background: 218 39% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 355 78% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 13% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 43 100% 52%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 74% 42%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 18%;
+    --ring: 355 78% 56%;
+    
+    /* Dark Mode Red Theme */
+    --lovable-background-dark: 222 47% 11%;
+    --lovable-primary-glow: 355 78% 56%;
+    --lovable-accent-cyan: 43 100% 52%;
+    
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--lovable-primary-glow)), hsl(var(--lovable-accent)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--lovable-primary-glow)), hsl(var(--lovable-accent)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--lovable-background-dark)), hsl(222 47% 15%));
+    --gradient-glow: radial-gradient(circle, hsl(var(--lovable-primary-glow) / 0.15), transparent);
+    
+    /* Enhanced Dark Shadows */
+    --shadow-elegant: 0 25px 60px -10px hsl(var(--lovable-primary-glow) / 0.35);
+    --shadow-glow: 0 0 80px hsl(var(--lovable-accent) / 0.4);
+    --shadow-accent: 0 15px 50px -5px hsl(var(--lovable-accent) / 0.3);
+    --shadow-card: 0 8px 30px -4px hsl(var(--lovable-primary-glow) / 0.18);
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 355 78% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 222 47% 15%;
+    --sidebar-ring: 355 78% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--lovable-primary) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--lovable-primary) / 0.5);
+  }
+}
+
+@layer components {
+  /* Lovable UI Classes */
+  .lovable-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .lovable-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .lovable-card {
+    background: hsl(var(--secondary) / 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .lovable-pulse {
+    animation: lovable-pulse 2s infinite;
+  }
+  
+  .lovable-float {
+    animation: lovable-float 6s ease-in-out infinite;
+  }
+  
+  .lovable-spin-slow {
+    animation: lovable-spin 20s linear infinite;
+  }
+
+  /* Interactive hover effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Link + card helpers */
+  .lovable-link {
+    color: hsl(var(--lovable-primary));
+    transition: var(--transition-fast);
+  }
+  .lovable-link:hover {
+    color: hsl(var(--accent));
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .lovable-card-hover {
+    transition: var(--transition-smooth);
+  }
+  .lovable-card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elegant);
+  }
+}
+
+@layer utilities {
+  /* Keyframes for custom animations */
+  @keyframes lovable-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--lovable-primary) / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px hsl(var(--lovable-primary) / 0);
+    }
+  }
+  
+  @keyframes lovable-float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes lovable-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes lovable-bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+}
