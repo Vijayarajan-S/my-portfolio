@@ -23,7 +23,7 @@ export default function AboutSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            About Vijayarajan Selvam
+            About Me
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8" />
         </motion.div>
@@ -72,7 +72,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="grid grid-cols-2 gap-4"
           >
-            {skillsOverview.map((interest, index) => (
+            {interests.map((interest, index) => (
               <motion.div
                 key={interest.title}
                 initial={{ opacity: 0, y: 30 }}

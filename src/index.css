@@ -234,30 +234,6 @@ All colors MUST be HSL.
     transform: translateY(-6px);
     box-shadow: var(--shadow-elegant);
   }
-
-  /* SmartCursor interactive enhancements */
-  .sc-interactive {
-    transition: var(--transition-smooth);
-    position: relative;
-  }
-  .sc-interactive:hover {
-    transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 10px 24px -6px hsl(var(--lovable-primary) / 0.25);
-  }
-  .sc-interactive::after {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    box-shadow: 0 0 0 0 hsl(var(--accent) / 0.0);
-  }
-  .sc-interactive:hover::after {
-    opacity: 1;
-    box-shadow: 0 0 0 3px hsl(var(--accent) / 0.35);
-  }
 }
 
 @layer utilities {
